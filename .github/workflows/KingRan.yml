@@ -6,7 +6,7 @@ on:
   watch:
     types: started
   repository_dispatch:
-    types: sync-KingRan-JDJB
+    types: sync-KingRan-KR
 jobs:
   repo-sync:
     env:
@@ -18,11 +18,11 @@ jobs:
         with:
           persist-credentials: false
 
-      - name: sync KingRan-JDJB
+      - name: sync KingRan-KR
         uses: repo-sync/github-sync@v2
         if: env.PAT
         with:
-          source_repo: "https://github.com/KingRan/JDJB.git"
+          source_repo: "https://github.com/KingRan/KR.git"
           source_branch: "main"
           destination_branch: "KingRan"
           github_token: ${{ secrets.PAT }}
